@@ -9,13 +9,13 @@ function App() {
   const [username, setUsername] = useState("");
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/getUsers").then((response) => {
+    Axios.get("https://my1stmern-test.herokuapp.com/getUsers").then((response) => {
       setListOfUsers(response.data)
     });
   }, []);
 
   const createUser = () => {
-    Axios.post("http://localhost:3001/createUser", { name, age, username }).then((response) => {
+    Axios.post("https://my1stmern-test.herokuapp.com/createUser", { name, age, username }).then((response) => {
       setListOfUsers([...listOfUsers, { name, age, username }])
     })
   }
